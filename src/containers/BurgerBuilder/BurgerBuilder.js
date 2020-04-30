@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, {Component, Fragment} from 'react';
 
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
@@ -26,7 +26,7 @@ class BurgerBuilder extends Component {
     error: false
   };
 
-  updatePurchaseState (ingredients) {
+  updatePurchaseState(ingredients) {
     const sum = Object.keys(ingredients)
       .map(igKey => {
         return ingredients[igKey];
@@ -83,7 +83,7 @@ class BurgerBuilder extends Component {
   purchaseContinueHandler = () => {
     const queryParams = [];
 
-    for(let i in this.state.ingredients) {
+    for (let i in this.state.ingredients) {
       queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
     }
     queryParams.push('price=' + this.state.totalPrice);
@@ -105,7 +105,7 @@ class BurgerBuilder extends Component {
       });
   };
 
-  render () {
+  render() {
     const disabledInfo = {
       ...this.state.ingredients
     };
@@ -115,7 +115,7 @@ class BurgerBuilder extends Component {
     }
 
     let orderSummary = null;
-    let burger = this.state.error ? <p>Ingredients can't be loaded!</p> : <Spinner />;
+    let burger = this.state.error ? <p>Ingredients can't be loaded!</p> : <Spinner/>;
 
     if (this.state.ingredients) {
       burger = (
@@ -127,7 +127,7 @@ class BurgerBuilder extends Component {
             disabled={disabledInfo}
             purchasable={this.state.purchasable}
             ordered={this.purchaseHandler}
-            price={this.state.totalPrice} />
+            price={this.state.totalPrice}/>
         </Fragment>
       );
 
@@ -139,7 +139,7 @@ class BurgerBuilder extends Component {
     }
 
     if (this.state.loading) {
-      orderSummary = <Spinner />
+      orderSummary = <Spinner/>
     }
 
     return (
