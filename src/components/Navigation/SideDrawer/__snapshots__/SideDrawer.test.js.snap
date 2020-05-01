@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SideDrawer /> should render SideDrawer as close 1`] = `
+<Fragment>
+  <backdrop />
+  <div
+    className="SideDrawer Close"
+  >
+    <div
+      className="Logo"
+    >
+      <logo />
+    </div>
+    <nav>
+      <navigationItems />
+    </nav>
+  </div>
+</Fragment>
+`;
+
+exports[`<SideDrawer /> should render SideDrawer as open 1`] = `
+<Fragment>
+  <backdrop
+    show={true}
+  />
+  <div
+    className="SideDrawer Open"
+  >
+    <div
+      className="Logo"
+    >
+      <logo />
+    </div>
+    <nav>
+      <navigationItems />
+    </nav>
+  </div>
+</Fragment>
+`;

@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BurgerBuilder /> addIngredientHandler 1`] = `
+<Fragment>
+  <Modal
+    modalClosed={[Function]}
+    show={false}
+  >
+    <OrderSummary
+      ingredients={Object {}}
+      price={4}
+      purchaseCancelled={[Function]}
+      purchaseContinued={[Function]}
+    />
+  </Modal>
+  <burger
+    ingredients={Object {}}
+  />
+  <buildControls
+    disabled={Object {}}
+    ingredientAdded={[Function]}
+    ingredientRemoved={[Function]}
+    ordered={[Function]}
+    price={4}
+    purchasable={false}
+  />
+</Fragment>
+`;
+
+exports[`<BurgerBuilder /> addIngredientHandler 2`] = `
+<Fragment>
+  <Modal
+    modalClosed={[Function]}
+    show={false}
+  >
+    <OrderSummary
+      ingredients={
+        Object {
+          "meat": NaN,
+        }
+      }
+      price={5.3}
+      purchaseCancelled={[Function]}
+      purchaseContinued={[Function]}
+    />
+  </Modal>
+  <burger
+    ingredients={
+      Object {
+        "meat": NaN,
+      }
+    }
+  />
+  <buildControls
+    disabled={
+      Object {
+        "meat": false,
+      }²
+    }
+    ingredientAdded={[Function]}
+    ingredientRemoved={[Function]}
+    ordered={[Function]}
+    price={5.3}
+    purchasable={false}
+  />
+</Fragment>
+`;
+
+exports[`<BurgerBuilder /> removeIngredientHandler 1`] = `
+<Fragment>
+  <Modal
+    modalClosed={[Function]}
+    show={false}
+  >
+    <OrderSummary
+      ingredients={
+        Object {
+          "cheese": 1,
+        }
+      }
+      price={4.4}
+      purchaseCancelled={[Function]}
+      purchaseContinued={[Function]}
+    />
+  </Modal>
+  <burger
+    ingredients={
+      Object {
+        "cheese": 1,
+      }
+    }
+  />
+  <buildControls
+    disabled={
+      Object {
+        "cheese": false,
+      }
+    }
+    ingredientAdded={[Function]}
+    ingredientRemoved={[Function]}
+    ordered={[Function]}
+    price={4.4}
+    purchasable={false}
+  />
+</Fragment>
+`;
+
+exports[`<BurgerBuilder /> removeIngredientHandler 2`] = `
+<Fragment>
+  <Modal
+    modalClosed={[Function]}
+    show={false}
+  >
+    <OrderSummary
+      ingredients={
+        Object {
+          "cheese": 0,
+        }
+      }
+      price={4}
+      purchaseCancelled={[Function]}
+      purchaseContinued={[Function]}
+    />
+  </Modal>
+  <burger
+    ingredients={
+      Object {
+        "cheese": 0,
+      }
+    }
+  />
+  <buildControls
+    disabled={
+      Object {
+        "cheese": true,
+      }
+    }
+    ingredientAdded={[Function]}
+    ingredientRemoved={[Function]}
+    ordered={[Function]}
+    price={4}
+    purchasable={false}
+  />
+</Fragment>
+`;
+
+exports[`<BurgerBuilder /> removeIngredientHandler 3`] = `
+<Fragment>
+  <Modal
+    modalClosed={[Function]}
+    show={false}
+  >
+    <OrderSummary
+      ingredients={
+        Object {
+          "cheese": 0,
+        }
+      }
+      price={4}
+      purchaseCancelled={[Function]}
+      purchaseContinued={[Function]}
+    />
+  </Modal>
+  <burger
+    ingredients={
+      Object {
+        "cheese": 0,
+      }
+    }
+  />
+  <buildControls
+    disabled={
+      Object {
+        "cheese": true,
+      }
+    }
+    ingredientAdded={[Function]}
+    ingredientRemoved={[Function]}
+    ordered={[Function]}
+    price={4}
+    purchasable={false}
+  />
+</Fragment>
+`;
+
+exports[`<BurgerBuilder /> should render BurgerBuilder 1`] = `
+<Fragment>
+  <Modal
+    modalClosed={[Function]}
+    show={false}
+  />
+  <spinner />
+</Fragment>
+`;
+
+exports[`<BurgerBuilder /> should render BurgerBuilder 2`] = `
+<Fragment>
+  <Modal
+    modalClosed={[Function]}
+    show={false}
+  >
+    <spinner />
+  </Modal>
+  <spinner />
+</Fragment>
+`;
+
+exports[`<BurgerBuilder /> should render BurgerBuilder 3`] = `
+<Fragment>
+  <Modal
+    modalClosed={[Function]}
+    show={false}
+  />
+  <p>
+    Ingredients can't be loaded!
+  </p>
+</Fragment>
+`;

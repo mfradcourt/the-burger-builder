@@ -1,26 +1,46 @@
 import React from 'react';
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 
 import { BurgerBuilder } from './BurgerBuilder';
-import Burger from '../../components/Burger/Burger';
-import BuildControls from '../../components/Burger/BuildControls/BuildControls';
-import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
 
 describe('<BurgerBuilder />', () => {
   let wrapper;
 
-  beforeEach(() => {
-    wrapper = shallow(<BurgerBuilder />);
+  it('should render BurgerBuilder', () => {
+    wrapper = shallow(
+      <BurgerBuilder/>
+    );
+
+    expect(wrapper).toMatchSnapshot();
+    wrapper.instance().setState({loading: true});
+    expect(wrapper).toMatchSnapshot();
+    wrapper.instance().setState({loading: false, error: true});
+    expect(wrapper).toMatchSnapshot();
   });
 
-  it('should display message if ingredients cant be loaded', () => {
-    expect(wrapper.contains('Ingredients can\'t be loaded!'));
+  it('addIngredientHandler', () => {
+    wrapper = shallow(
+      <BurgerBuilder/>
+    );
+    wrapper.instance().setState({totalPrice: 4, ingredients:{}});
+    expect(wrapper).toMatchSnapshot();
+    wrapper.instance().addIngredientHandler('meat');
+    expect(wrapper.instance().state.totalPrice).toBe(5.3);
+    expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render BuildControls when receiving ingredients', () => {
-    wrapper.setState({ingredients: {salad: 0}});
-    expect(wrapper.find(Burger)).toHaveLength(1);
-    expect(wrapper.find(BuildControls)).toHaveLength(1);
-    expect(wrapper.find(OrderSummary)).toHaveLength(1);
+  it('removeIngredientHandler', () => {
+    wrapper = shallow(
+      <BurgerBuilder/>
+    );
+    wrapper.instance().setState({totalPrice: 4.4, ingredients:{cheese:1}});
+    expect(wrapper).toMatchSnapshot();
+    wrapper.instance().removeIngredientHandler('cheese');
+    expect(wrapper.instance().state.totalPrice).toBe(4);
+    expect(wrapper).toMatchSnapshot();
+    wrapper.instance().removeIngredientHandler('cheese');
+    expect(wrapper.instance().state.totalPrice).toBe(4);
+    expect(wrapper).toMatchSnapshot();
   });
+
 });

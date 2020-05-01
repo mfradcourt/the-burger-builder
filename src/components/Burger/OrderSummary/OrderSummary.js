@@ -3,10 +3,6 @@ import Button from '../../UI/Button/Button';
 
 class OrderSummary extends Component {
 
-  componentWillUpdate(nextProps, nextState, nextContext) {
-    console.log('[OrderSummary] Will update');
-  }
-
   render() {
     const ingredientSummary = Object.keys(this.props.ingredients)
       .map(igKey => {
@@ -31,6 +27,6 @@ class OrderSummary extends Component {
       </Fragment>
     );
   }
-};
+}
 
 export default OrderSummary;

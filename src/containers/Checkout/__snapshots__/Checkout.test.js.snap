@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkout /> should render Checkout 1`] = `
+<div>
+  <checkoutSummary
+    checkoutCancelled={[Function]}
+    checkoutContinued={[Function]}
+    ingredients={Object {}}
+  />
+  <Route
+    path="/checkout/contact-data"
+    render={[Function]}
+  />
+</div>
+`;

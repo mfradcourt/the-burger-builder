@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> should render Layout 1`] = `
+<Fragment>
+  <toolbar
+    drawerToggleClicked={[Function]}
+  />
+  <sideDrawer
+    closed={[Function]}
+    open={false}
+  />
+  <main
+    className="Content"
+  >
+    My Content
+  </main>
+</Fragment>
+`;
