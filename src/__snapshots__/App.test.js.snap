@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should render a default App 1`] = `
+<div>
+  <layout>
+    <Switch>
+      <Route
+        component={[Function]}
+        path="/checkout"
+      />
+      <Route
+        component={[Function]}
+        path="/orders"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/"
+      />
+    </Switch>
+  </layout>
+</div>
+`;

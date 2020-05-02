@@ -49,7 +49,7 @@ describe('<ContactData />', () => {
 
     expect(
       instance.checkValidity(
-      'Zip', 
+        'Zip', 
         {
           required: true,
           minLength: 3,
