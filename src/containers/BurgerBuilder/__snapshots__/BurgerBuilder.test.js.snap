@@ -55,7 +55,7 @@ exports[`<BurgerBuilder /> addIngredientHandler 2`] = `
     disabled={
       Object {
         "meat": false,
-      }²
+      }
     }
     ingredientAdded={[Function]}
     ingredientRemoved={[Function]}

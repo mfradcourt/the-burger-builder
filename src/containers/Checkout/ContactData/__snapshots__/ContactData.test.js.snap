@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ContactData /> should render ContactData 1`] = `
+exports[`<ContactData /> checkValidity 1`] = `
 <div
   className="ContactData"
 >
@@ -136,5 +136,155 @@ exports[`<ContactData /> should render ContactData 1`] = `
       ORDER
     </button>
   </form>
+</div>
+`;
+
+exports[`<ContactData /> should render a default ContactData 1`] = `
+<div
+  className="ContactData"
+>
+  <h4>
+    Enter you contact data
+  </h4>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      changed={[Function]}
+      elementConfig={
+        Object {
+          "placeholder": "Your Name",
+          "type": "text",
+        }
+      }
+      elementType="input"
+      invalid={true}
+      key="name"
+      shouldValidate={
+        Object {
+          "required": true,
+        }
+      }
+      touched={false}
+      value=""
+    />
+    <input
+      changed={[Function]}
+      elementConfig={
+        Object {
+          "placeholder": "Street",
+          "type": "text",
+        }
+      }
+      elementType="input"
+      invalid={true}
+      key="street"
+      shouldValidate={
+        Object {
+          "required": true,
+        }
+      }
+      touched={false}
+      value=""
+    />
+    <input
+      changed={[Function]}
+      elementConfig={
+        Object {
+          "placeholder": "ZipCode",
+          "type": "text",
+        }
+      }
+      elementType="input"
+      invalid={true}
+      key="zipCode"
+      shouldValidate={
+        Object {
+          "maxLength": 5,
+          "minLength": 5,
+          "required": true,
+        }
+      }
+      touched={false}
+      value=""
+    />
+    <input
+      changed={[Function]}
+      elementConfig={
+        Object {
+          "placeholder": "Country",
+          "type": "text",
+        }
+      }
+      elementType="input"
+      invalid={true}
+      key="country"
+      shouldValidate={
+        Object {
+          "required": true,
+        }
+      }
+      touched={false}
+      value=""
+    />
+    <input
+      changed={[Function]}
+      elementConfig={
+        Object {
+          "placeholder": "Email",
+          "type": "text",
+        }
+      }
+      elementType="input"
+      invalid={true}
+      key="email"
+      shouldValidate={
+        Object {
+          "required": true,
+        }
+      }
+      touched={false}
+      value=""
+    />
+    <input
+      changed={[Function]}
+      elementConfig={
+        Object {
+          "options": Array [
+            Object {
+              "displayValue": "Fastest",
+              "value": "fastest",
+            },
+            Object {
+              "displayValue": "Cheapest",
+              "value": "cheapest",
+            },
+          ],
+        }
+      }
+      elementType="select"
+      invalid={false}
+      key="deliveryMethod"
+      shouldValidate={Object {}}
+      value="fastest"
+    />
+    <button
+      btnType="Success"
+      disabled={true}
+    >
+      ORDER
+    </button>
+  </form>
+</div>
+`;
+
+exports[`<ContactData /> should render a default ContactData with a Spinner when loading is true 1`] = `
+<div
+  className="ContactData"
+>
+  <h4>
+    Enter you contact data
+  </h4>
+  <spinner />
 </div>
 `;

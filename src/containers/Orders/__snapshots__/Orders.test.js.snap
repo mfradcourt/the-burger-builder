@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Orders /> should render Orders when there are orders 1`] = `
+<div>
+  <order
+    ingredients={
+      Object {
+        "meat": 2,
+        "salad": 5,
+      }
+    }
+    key="1"
+    price={10}
+  />
+  <order
+    ingredients={
+      Object {
+        "meat": 6,
+        "salad": 5,
+      }
+    }
+    key="2"
+    price={25}
+  />
+</div>
+`;
+
+exports[`<Orders /> should render a default Orders 1`] = `<div />`;
