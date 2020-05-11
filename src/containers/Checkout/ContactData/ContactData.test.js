@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from "enzyme";
 
-import ContactData from './ContactData';
+import { ContactData } from './ContactData';
 
 describe('<ContactData />', () => {
   let wrapper;

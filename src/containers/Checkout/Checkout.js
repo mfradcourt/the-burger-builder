@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router';
 import { connect } from 'react-redux';
 
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from "./ContactData/ContactData";
+import { BrowserRouter } from 'react-router-dom';
 
 class Checkout extends Component {
 
@@ -22,10 +23,11 @@ class Checkout extends Component {
           ingredients={this.props.ings}
           checkoutCancelled={this.checkoutCancelledHandler}
           checkoutContinued={this.checkoutContinuedHandler}/>
-
-        <Route
-          path={this.props.match.path + '/contact-data'}
-          component={ContactData} />
+        <BrowserRouter>
+          <Route
+            path={this.props.match.path + '/contact-data'}
+            component={ContactData} />
+        </BrowserRouter>
       </div>
     )
   }

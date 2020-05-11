@@ -5,7 +5,15 @@ exports[`<App /> should render a default App 1`] = `
   <layout>
     <Switch>
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(Checkout)",
+            "type": [Function],
+          }
+        }
         path="/checkout"
       />
       <Route
@@ -13,7 +21,15 @@ exports[`<App /> should render a default App 1`] = `
         path="/orders"
       />
       <Route
-        component={[Function]}
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(_temp)",
+            "type": [Function],
+          }
+        }
         exact={true}
         path="/"
       />

@@ -1,15 +1,27 @@
 import React from 'react';
-import { shallow } from "enzyme";
-import { createMemoryHistory, createLocation } from 'history';
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import { create } from 'react-test-renderer';
 
 import Checkout from './Checkout';
 
-describe('<Checkout />', () => {
-  let wrapper;
+const mockStore = configureStore([]);
 
-  it('should render Checkout', () => {
-    const history = createMemoryHistory();
-    const path = `/checkout`;
+describe('<Checkout />', () => {
+  let store;
+  let component;
+
+  beforeEach(() => {
+    store = mockStore({
+      ingredients: {
+        salad: 0,
+        bacon: 0,
+        cheese: 0,
+        meat: 0
+      },
+    });
+
+    const path = '/checkout';
 
     const match = {
       isExact: false,
@@ -18,16 +30,16 @@ describe('<Checkout />', () => {
       params: { price: 4.00, ingredients: {} }
     };
 
-    const location = createLocation(match.url);
-
-    wrapper = shallow(
-      <Checkout
-        location={location}
-        match={match}
-        history={history}
-      />
+    component = create(
+      <Provider store={store}>
+        <Checkout 
+          match={match}
+        />
+      </Provider>
     );
+  });
 
-    expect(wrapper).toMatchSnapshot();
+  it('should render Checkout', () => {
+    expect(component.toJSON()).toMatchSnapshot();
   });
 });

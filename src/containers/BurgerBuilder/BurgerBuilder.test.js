@@ -1,46 +1,44 @@
 import React from 'react';
-import { shallow, mount } from "enzyme";
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import renderer from 'react-test-renderer';
 
-import { BurgerBuilder } from './BurgerBuilder';
+import ConnectedBurgerBuilder, { BurgerBuilder } from './BurgerBuilder';
+
+const mockStore = configureStore([]);
 
 describe('<BurgerBuilder />', () => {
-  let wrapper;
+  let store;
+  let component;
+
+  it('should render the connected BurgerBuilder with default state', () => {
+    store = mockStore({
+      ingredients: {
+        salad: 1,
+        bacon: 2,
+        cheese: 2,
+        meat: 3
+      },
+      totalPrice: 4
+    });
+
+    component = renderer.create(
+      <Provider store={store}>
+        <ConnectedBurgerBuilder />
+      </Provider>
+    );
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 
   it('should render BurgerBuilder', () => {
-    wrapper = shallow(
-      <BurgerBuilder/>
+    const component = renderer.create(
+      <BurgerBuilder />
     );
 
-    expect(wrapper).toMatchSnapshot();
-    wrapper.instance().setState({loading: true});
-    expect(wrapper).toMatchSnapshot();
-    wrapper.instance().setState({loading: false, error: true});
-    expect(wrapper).toMatchSnapshot();
+    component.getInstance().setState({ loading: true });
+    expect(component).toMatchSnapshot();
+    component.getInstance().setState({ loading: false, error: true });
+    expect(component).toMatchSnapshot();
   });
-
-  it('addIngredientHandler', () => {
-    wrapper = shallow(
-      <BurgerBuilder/>
-    );
-    wrapper.instance().setState({totalPrice: 4, ingredients:{}});
-    expect(wrapper).toMatchSnapshot();
-    wrapper.instance().addIngredientHandler('meat');
-    expect(wrapper.instance().state.totalPrice).toBe(5.3);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('removeIngredientHandler', () => {
-    wrapper = shallow(
-      <BurgerBuilder/>
-    );
-    wrapper.instance().setState({totalPrice: 4.4, ingredients:{cheese:1}});
-    expect(wrapper).toMatchSnapshot();
-    wrapper.instance().removeIngredientHandler('cheese');
-    expect(wrapper.instance().state.totalPrice).toBe(4);
-    expect(wrapper).toMatchSnapshot();
-    wrapper.instance().removeIngredientHandler('cheese');
-    expect(wrapper.instance().state.totalPrice).toBe(4);
-    expect(wrapper).toMatchSnapshot();
-  });
-
 });
