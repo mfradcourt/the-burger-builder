@@ -1,44 +1,18 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import configureStore from 'redux-mock-store';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 import ConnectedBurgerBuilder, { BurgerBuilder } from './BurgerBuilder';
+import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 
-const mockStore = configureStore([]);
+describe('BurgerBuilder', () => {
+  let wrapper;
 
-describe('<BurgerBuilder />', () => {
-  let store;
-  let component;
-
-  it('should render the connected BurgerBuilder with default state', () => {
-    store = mockStore({
-      ingredients: {
-        salad: 1,
-        bacon: 2,
-        cheese: 2,
-        meat: 3
-      },
-      totalPrice: 4
-    });
-
-    component = renderer.create(
-      <Provider store={store}>
-        <ConnectedBurgerBuilder />
-      </Provider>
-    );
-
-    expect(component.toJSON()).toMatchSnapshot();
+  beforeEach(() => {
+    wrapper = shallow(<BurgerBuilder onInitIngredients={() => {}} />);
   });
 
-  it('should render BurgerBuilder', () => {
-    const component = renderer.create(
-      <BurgerBuilder />
-    );
-
-    component.getInstance().setState({ loading: true });
-    expect(component).toMatchSnapshot();
-    component.getInstance().setState({ loading: false, error: true });
-    expect(component).toMatchSnapshot();
+  it('should render BuildControls when receiving ingredients', () => {
+    wrapper.setProps({ings: {salad: 0}});
+    expect(wrapper.find(BuildControls)).toHaveLength(1);
   });
 });
