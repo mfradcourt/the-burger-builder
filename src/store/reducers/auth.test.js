@@ -7,7 +7,8 @@ describe('auth reducer', () => {
       token: null,
       userId: null,
       error: null,
-      loading: false
+      loading: false,
+      authRedirectPath: '/'
     });
   });
 
